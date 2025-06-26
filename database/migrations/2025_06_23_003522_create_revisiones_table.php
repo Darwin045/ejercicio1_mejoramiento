@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // no es necesaio declarar los datos como booleano al menos que se pida como requerimiento
         Schema::create('revisiones', function (Blueprint $table) {
             $table->id();
-            $table->boolean('filtro')->default(false);
-            $table->boolean('aceite')->default(false);
-            $table->boolean('frenos')->default(false);
+            $table->string('filtro');
+            $table->string('aceite');
+            $table->string('frenos');
             $table->foreignId('coche_id')->constrained('coches')->onDelete('cascade');
             $table->timestamps();
         });

@@ -12,8 +12,8 @@ class RevisionSeeder extends Seeder
      */
     public function run(): void
     {
+        // Crea 10 revisiones, cada una con su propio coche
         Revision::factory()->count(10)->create();
+        
     }
 }
-
-
